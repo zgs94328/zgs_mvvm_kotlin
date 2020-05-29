@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#Fde60d</color>
+    <color name="colorPrimaryDark">#Fde60d</color>
+    <color name="colorAccent">#Fde60d</color>
+
+    <!--一级字体-->
+    <color name="crl_text_333333">#333333</color>
+    <color name="crl_text_757575">#757575</color>
+    <color name="crl_text_999999">#999999</color>
+</resources>
