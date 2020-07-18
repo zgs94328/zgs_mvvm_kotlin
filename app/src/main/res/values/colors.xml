@@ -1,11 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="colorPrimary">#Fde60d</color>
-    <color name="colorPrimaryDark">#Fde60d</color>
-    <color name="colorAccent">#Fde60d</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">#e44b43</color>
+    <color name="colorPrimaryDark">#e44b43</color>
+    <color name="colorAccent">#e44b43</color>
 
+    <!--    通用-->
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
+    <color name="textColor">#8A000000</color>
+    <!--line-->
+    <color name="line_cdcecd">#cdcecd</color>
     <!--一级字体-->
     <color name="crl_text_333333">#333333</color>
     <color name="crl_text_757575">#757575</color>
     <color name="crl_text_999999">#999999</color>
+    <!--其他-->
+    <color name="crl_f8f8f8">#f8f8f8</color>
 </resources>

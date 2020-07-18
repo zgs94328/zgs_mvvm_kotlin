@@ -1,27 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="UnderlineEditText">
+    <declare-styleable name="ZgsCustomEditText">
 
-        <attr name="ic_delete" format="reference" />
-        <attr name="delete_x" format="integer"  />
-        <attr name="delete_y" format="integer"  />
-        <attr name="delete_width" format="integer"  />
-        <attr name="delete_height" format="integer"  />
+        <attr name="line_click_color" format="color"  />
+        <attr name="line_unclick_color" format="color"  />
+        <attr name="line_default_color" format="color"  />
+        <attr name="line_width" format="integer"  />
+        <attr name="line_margin_top" format="integer"  />
 
-        <attr name="ic_left_click" format="reference" />
-        <attr name="ic_left_unclick" format="reference" />
-        <attr name="left_x" format="integer"  />
-        <attr name="left_y" format="integer"  />
-        <attr name="left_width" format="integer"  />
-        <attr name="left_height" format="integer"  />
-
-        <attr name="lineColor_click" format="color"  />
-        <attr name="lineColor_unclick" format="color"  />
-        <attr name="linePosition" format="integer"  />
-        <attr name="underlineColor" format="color"  />
-        <attr name="underlineWidth" format="integer"  />
-
-        <attr name="cursor" format="reference" />
-
+        <attr name="right_icon" format="reference"  />
+        <attr name="right_icon_x" format="integer"  />
+        <attr name="right_icon_y" format="integer"  />
+        <attr name="right_icon_width" format="integer"  />
+        <attr name="right_icon_height" format="integer"  />
     </declare-styleable>
 </resources>
