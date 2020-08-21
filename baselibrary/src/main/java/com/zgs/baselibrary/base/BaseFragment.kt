@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
@@ -23,6 +24,7 @@ import androidx.lifecycle.ViewModelProvider
  */
 abstract class BaseFragment : Fragment() {
 
+    protected lateinit var mBinding: ViewDataBinding
     //是否第一次加载
     private var isFirst: Boolean = true
 
@@ -34,14 +36,16 @@ abstract class BaseFragment : Fragment() {
      */
     abstract fun layoutId(): Int
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        return inflater.inflate(layoutId(), container, false)
+        mBinding = DataBindingUtil.inflate(inflater, layoutId(), container, false)
+        mBinding.lifecycleOwner = this
+        return mBinding.root
     }
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         mActivity = context as AppCompatActivity

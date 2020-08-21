@@ -37,7 +37,10 @@ android {
         enabled true
     }
 }
-
+ext {
+    koin_version = '2.0.1'
+    navigation_version = '2.3.0'
+}
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -46,8 +49,16 @@ dependencies {
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
-    api 'androidx.navigation:navigation-fragment-ktx:2.3.0'
-    api 'androidx.navigation:navigation-ui-ktx:2.3.0'
+//    navigation
+    api "android.arch.navigation:navigation-ui:$navigation_version"
+    api "android.arch.navigation:navigation-fragment:$navigation_version"
+    api "androidx.navigation:navigation-fragment-ktx:$navigation_version"
+    api "androidx.navigation:navigation-ui-ktx:$navigation_version"
+    //koin
+    api "org.koin:koin-android-viewmodel:$koin_version"
+    api "org.koin:koin-android:$koin_version"
+    api "org.koin:koin-android-scope:$koin_version"
+    api "org.koin:koin-android-ext:$koin_version"
     //rxhttp 网络请求框架
     //以下三个为必须，其它均为非必须
     api 'com.ljx.rxhttp:rxhttp:2.2.4'
@@ -58,11 +69,6 @@ dependencies {
     api 'me.jessyan:autosize:1.2.1'
 //    无需再写shape.xml 直接通过属性设置圆角 点击等效果  git https://github.com/JavaNoober/BackgroundLibrary/tree/v1.5.7
     api 'com.noober.background:core:1.5.7'
-    //koin
-    api 'org.koin:koin-android-viewmodel:2.0.1'
-    api 'org.koin:koin-android:2.0.1'
-    api 'org.koin:koin-android-scope:2.0.1'
-    api 'org.koin:koin-android-ext:2.0.1'
-//    底部导航栏  git https://github.com/ittianyu/BottomNavigationViewEx/blob/master/README_ZH.md
-    api 'com.github.ittianyu:BottomNavigationViewEx:2.0.4'
+
+
 }

@@ -5,6 +5,7 @@ import android.view.View
 import android.view.animation.AccelerateInterpolator
 import android.view.animation.DecelerateInterpolator
 import android.widget.ViewFlipper
+import androidx.appcompat.widget.Toolbar
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
@@ -16,6 +17,7 @@ import com.zgs.zgsmvvmkt.ui.fragment.main.mine.MineFragment
 import com.zgs.zgsmvvmkt.ui.fragment.main.plaza.PlazaFragment
 import com.zgs.zgsmvvmkt.ui.fragment.main.project.ProjectFragment
 import com.zgs.zgsmvvmkt.ui.fragment.main.publicnumber.PublicNumberFragment
+import com.zgs.zgsmvvmkt.util.SettingUtil
 import com.zgs.zgsmvvmkt.util.dip2px
 import com.zgs.zgsmvvmkt.weight.ColorFlipPagerTitleView
 import kotlinx.android.synthetic.main.item_home_top_serach_text.view.*
@@ -151,5 +153,12 @@ fun ViewFlipper.init(
     setOnClickListener {
         viewFlipperSelectedAction.invoke(displayedChild)
     }
+    return this
+}
+/**
+ * 初始化普通的toolbar 只设置标题
+ */
+fun Toolbar.init(titleStr: String = ""): Toolbar {
+    title = titleStr
     return this
 }

@@ -1,10 +1,13 @@
 package com.zgs.zgsmvvmkt.core.ext
 
+import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
+import com.kingja.loadsir.core.LoadService
+import com.kingja.loadsir.core.LoadSir
 import java.util.*
 
 /**
@@ -18,6 +21,7 @@ fun ViewPager2.commonInit(
     fragments: ArrayList<Fragment>,
     isUserInputEnabled: Boolean = true
 ): ViewPager2 {
+    offscreenPageLimit = fragments.size;
     this.isUserInputEnabled = isUserInputEnabled
     adapter = object : FragmentStateAdapter(fragment) {
         override fun getItemCount(): Int = fragments.size
@@ -48,3 +52,11 @@ fun RecyclerView.commonInit(
     return this
 }
 
+fun loadServiceInit(view: View, callback: () -> Unit): LoadService<Any> {
+    val loadsir = LoadSir.getDefault().register(view) {
+        //点击重试时触发的操作
+        callback.invoke()
+    }
+    loadsir.showSuccess()
+    return loadsir
+}

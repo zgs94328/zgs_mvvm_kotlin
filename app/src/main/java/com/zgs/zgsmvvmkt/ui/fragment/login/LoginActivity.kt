@@ -2,7 +2,6 @@ package com.zgs.zgsmvvmkt.ui.fragment.login
 
 import android.widget.CompoundButton
 import com.zgs.baselibrary.base.BaseActivity
-import com.zgs.baselibrary.util.StatusBarUtil
 import com.zgs.zgsmvvmkt.BR
 import com.zgs.zgsmvvmkt.R
 import com.zgs.zgsmvvmkt.viewmodel.RegistAndLoginModel
@@ -18,8 +17,6 @@ class LoginActivity : BaseActivity() {
     override fun getLayoutResId(): Int = R.layout.activity_login_and_regist
 
     override fun initView() {
-        StatusBarUtil.setTranslucent(this)
-        StatusBarUtil.setLightMode(this)
     }
 
     override fun initData() {

@@ -2,15 +2,10 @@ package com.zgs.zgsmvvmkt.http.manager
 
 import com.zgs.zgsmvvmkt.http.entity.AppException
 import com.zgs.zgsmvvmkt.http.entity.BaseResponse
-import com.zgs.zgsmvvmkt.util.Tip
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.launch
+import com.zgs.baselibrary.util.Tip
 import rxhttp.wrapper.annotation.Parser
 import rxhttp.wrapper.entity.ParameterizedTypeImpl
-import rxhttp.wrapper.exception.ParseException
 import rxhttp.wrapper.parse.AbstractParser
-import java.io.IOException
 import java.lang.Exception
 import java.lang.reflect.Type
 

@@ -32,7 +32,7 @@ fun <T> loadListData(
             }
             //是第一页
             data.isRefresh -> {
-                baseQuickAdapter.setList(data.listData)
+                baseQuickAdapter.setDiffNewData(data.listData);
                 loadService.showSuccess()
             }
             //不是第一页

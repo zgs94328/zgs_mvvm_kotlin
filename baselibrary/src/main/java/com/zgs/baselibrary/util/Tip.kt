@@ -1,9 +1,9 @@
-package com.zgs.zgsmvvmkt.util
+package com.zgs.baselibrary.util
 
 import android.os.Handler
 import android.os.Looper
 import android.widget.Toast
-import com.zgs.zgsmvvmkt.App
+import com.zgs.baselibrary.base.BaseApp
 
 /**
  * 可在任意线程执行本类方法
@@ -17,7 +17,10 @@ object Tip {
 
     @JvmOverloads
     fun show(msgResId: Int, timeLong: Boolean = false) {
-        show(App.getContext().getString(msgResId), timeLong)
+        show(
+            BaseApp.getContext().getString(msgResId),
+            timeLong
+        )
     }
 
     @JvmOverloads
@@ -27,7 +30,8 @@ object Tip {
                 mToast!!.cancel()
             }
             val duration = if (timeLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
-            mToast = Toast.makeText(App.getContext(), msg, duration)
+            mToast =
+                Toast.makeText(BaseApp.getContext(), msg, duration)
             mToast?.show()
         })
     }

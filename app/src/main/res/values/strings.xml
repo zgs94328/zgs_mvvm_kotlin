@@ -13,4 +13,6 @@
     <string name="notify_no_network">网络连接不可用，请稍后重试！</string>
     <string name="esky_service_exception">网络不给力，请稍候重试！</string>
     <string name="time_out_please_try_again_later">连接超时,请稍后再试</string>
+    <!--  app奔溃  -->
+    <string name="error_occurred">不好意思App翻车了。\n请拿已复制好的错误日志去啪啪啪得打作者的脸</string>
 </resources>

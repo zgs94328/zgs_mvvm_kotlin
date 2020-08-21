@@ -1,12 +1,17 @@
 package com.zgs.zgsmvvmkt.ui.fragment.main
 
 import android.os.Bundle
+import androidx.navigation.Navigation
 import com.zgs.baselibrary.base.BaseFragment
+import com.zgs.baselibrary.ext.view.setOnClickNoRepeatListener
+import com.zgs.baselibrary.navigation.NavHostFragment
 import com.zgs.zgsmvvmkt.R
 import com.zgs.zgsmvvmkt.core.ext.init
 import com.zgs.zgsmvvmkt.core.ext.initMain
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_main.*
+import me.hgj.jetpackmvvm.ext.nav
+import me.hgj.jetpackmvvm.ext.navigateAction
 
 /**
  *  @author 张国胜
@@ -32,8 +37,11 @@ class MainFragment:BaseFragment() {
     }
 
     override fun lazyLoadData() {
+
     }
 
     override fun createObserver() {
     }
+
+
 }

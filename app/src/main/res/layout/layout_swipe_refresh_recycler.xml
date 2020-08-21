@@ -6,10 +6,11 @@
 
     </data>
 
+
     <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:layout_height="match_parent">
 
         <com.scwang.smart.refresh.layout.SmartRefreshLayout
             android:id="@+id/smartRefreshLayout"
@@ -27,6 +28,9 @@
                 android:overScrollMode="never"
                 android:scrollbars="none" />
 
+            <com.scwang.smart.refresh.footer.ClassicsFooter
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
 
         </com.scwang.smart.refresh.layout.SmartRefreshLayout>
     </LinearLayout>

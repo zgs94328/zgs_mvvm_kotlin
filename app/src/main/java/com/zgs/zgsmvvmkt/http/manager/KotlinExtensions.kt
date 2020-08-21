@@ -4,9 +4,10 @@ import android.content.Context
 import android.net.ConnectivityManager
 
 import com.google.gson.JsonSyntaxException
+import com.zgs.baselibrary.base.BaseApp
 import com.zgs.zgsmvvmkt.App
 import com.zgs.zgsmvvmkt.R
-import com.zgs.zgsmvvmkt.util.Tip
+import com.zgs.baselibrary.util.Tip
 import rxhttp.wrapper.exception.HttpStatusCodeException
 import rxhttp.wrapper.exception.ParseException
 import java.net.ConnectException
@@ -28,7 +29,7 @@ fun Throwable.show(standbyMsg: String) {
 }
 
 fun Throwable.show(standbyMsg: Int) {
-    (errorMsg ?: App.getContext().getString(standbyMsg)).show()
+    (errorMsg ?: BaseApp.getContext().getString(standbyMsg)).show()
 }
 
 fun String.show() {
@@ -76,7 +77,7 @@ val Throwable.errorMsg: String?
 private fun <T> handleNetworkException(throwable: T): String? {
     val stringId =
         if (throwable is UnknownHostException) { //网络异常
-            if (!isNetworkConnected(App.getContext())) R.string.network_error else R.string.notify_no_network
+            if (!isNetworkConnected(BaseApp.getContext())) R.string.network_error else R.string.notify_no_network
         } else if (throwable is SocketTimeoutException || throwable is TimeoutException) {
             R.string.time_out_please_try_again_later  //前者是通过OkHttpClient设置的超时引发的异常，后者是对单个请求调用timeout方法引发的超时异常
         } else if (throwable is ConnectException) {
@@ -84,7 +85,7 @@ private fun <T> handleNetworkException(throwable: T): String? {
         } else {
             -1
         }
-    return if (stringId == -1) null else App.getContext().getString(stringId)
+    return if (stringId == -1) null else BaseApp.getContext().getString(stringId)
 }
 
 private fun isNetworkConnected(context: Context): Boolean {

@@ -3,7 +3,7 @@ package com.zgs.zgsmvvmkt.adapter
 import com.chad.library.adapter.base.BaseQuickAdapter
 import com.chad.library.adapter.base.module.LoadMoreModule
 import com.chad.library.adapter.base.viewholder.BaseDataBindingHolder
-import com.zgs.zgsmvvmkt.databinding.AdapterArticleBinding
+import com.zgs.zgsmvvmkt.databinding.AdapterArticleItemBinding
 import com.zgs.zgsmvvmkt.model.bean.AriticleBean
 
 /**
@@ -12,12 +12,12 @@ import com.zgs.zgsmvvmkt.model.bean.AriticleBean
  *  @desc:
  */
 class ArticleAdapter(layoutId: Int) :
-    BaseQuickAdapter<AriticleBean, BaseDataBindingHolder<AdapterArticleBinding>>(layoutId),LoadMoreModule {
-    override fun convert(holder: BaseDataBindingHolder<AdapterArticleBinding>, item: AriticleBean) {
+    BaseQuickAdapter<AriticleBean, BaseDataBindingHolder<AdapterArticleItemBinding>>(layoutId) {
+    override fun convert(holder: BaseDataBindingHolder<AdapterArticleItemBinding>, item: AriticleBean) {
         // 获取 Binding
 
         // 获取 Binding
-        val binding: AdapterArticleBinding? = holder.dataBinding
+        val binding: AdapterArticleItemBinding? = holder.dataBinding
         binding?.bean = item
     }
 }
