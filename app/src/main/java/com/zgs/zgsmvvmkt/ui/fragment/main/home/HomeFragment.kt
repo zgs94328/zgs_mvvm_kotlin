@@ -24,6 +24,7 @@ class HomeFragment : BaseFragment() {
     }
 
     override fun initView(savedInstanceState: Bundle?) {
+
         titleList.forEach { _ ->
             fragments.add(HotArticleFragment())
         }

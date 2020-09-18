@@ -7,6 +7,7 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.SimpleItemAnimator
+import com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
 import com.kingja.loadsir.callback.Callback
 import com.kingja.loadsir.core.LoadService
 import com.kingja.loadsir.core.LoadSir
@@ -15,6 +16,7 @@ import com.zgs.baselibrary.base.BaseFragment
 import com.zgs.baselibrary.util.Tip
 import com.zgs.zgsmvvmkt.R
 import com.zgs.zgsmvvmkt.core.ext.commonInit
+import com.zgs.zgsmvvmkt.core.ext.init
 import com.zgs.zgsmvvmkt.core.ext.showLoading
 import com.zgs.zgsmvvmkt.ui.fragment.main.MainFragment
 import com.zgs.zgsmvvmkt.util.loadCallBack.LoadingCallback
@@ -29,7 +31,6 @@ abstract class BaseSwipeListFragment<T : RecyclerView.Adapter<*>> : BaseFragment
     //界面状态管理者
     lateinit var loadsir: LoadService<Any>
     protected lateinit var adapter: T
-    abstract fun initAdapter(): T
     override fun layoutId(): Int = R.layout.layout_swipe_refresh_recycler
     var exitTime = 0L
     override fun initView(savedInstanceState: Bundle?) {
@@ -38,7 +39,6 @@ abstract class BaseSwipeListFragment<T : RecyclerView.Adapter<*>> : BaseFragment
             onRetry(it)
         })
         adapter = initAdapter()
-
         recyclerView.commonInit(adapter)
 
         smartRefreshLayout.setOnRefreshListener {
@@ -67,10 +67,11 @@ abstract class BaseSwipeListFragment<T : RecyclerView.Adapter<*>> : BaseFragment
             })
     }
 
+    abstract fun initAdapter(): T
+
     abstract fun onRefresh(refreshlayout: RefreshLayout)
     abstract fun onLoadMore(refreshlayout: RefreshLayout)
     abstract fun onRetry(view: View)
-
 
 
 }
