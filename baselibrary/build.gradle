@@ -70,5 +70,4 @@ dependencies {
 //    无需再写shape.xml 直接通过属性设置圆角 点击等效果  git https://github.com/JavaNoober/BackgroundLibrary/tree/v1.5.7
     api 'com.noober.background:core:1.5.7'
 
-
 }

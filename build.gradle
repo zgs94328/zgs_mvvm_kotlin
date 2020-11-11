@@ -15,7 +15,6 @@ buildscript {
 
 allprojects {
     addRepos(repositories)
-
 }
 
 task clean(type: Delete) {
